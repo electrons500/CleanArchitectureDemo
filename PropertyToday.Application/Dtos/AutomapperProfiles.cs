@@ -15,6 +15,9 @@ namespace PropertyToday.Application.Dtos
             CreateMap<NewPropertyRequest, Property>();
             CreateMap<UpdatePropertyRequest, Property>();
             CreateMap<Property, GetPropertyQuery>();
+            CreateMap<NewImage, Image>();
+            CreateMap<Image,GetImagesRequest>();
+            CreateMap<Image,GetImageRequest>();
            
         }
     }

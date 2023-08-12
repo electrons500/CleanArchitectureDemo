@@ -4,11 +4,6 @@ using Microsoft.Extensions.DependencyInjection;
 using PropertyToday.Application.Repositories;
 using PropertyToday.Infrastructure.Context;
 using PropertyToday.Infrastructure.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PropertyToday.Infrastructure
 {
@@ -17,6 +12,7 @@ namespace PropertyToday.Infrastructure
         public static IServiceCollection AddInfrastructureServices(this IServiceCollection services,IConfiguration configuration)
         {
             return services.AddTransient<IPropertyRepo,PropertyRepo>()
+                           .AddTransient<IImageRepo,ImageRepo>()
                            .AddDbContext<PropertyTodayDbContext>(o =>
                            {
                                o.UseSqlServer(configuration.GetConnectionString("Conn"));
